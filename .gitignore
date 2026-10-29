@@ -1,0 +1,46 @@
+
+# --- Python ---
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Environment variables & secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Real / private data (NEVER commit) ---
+data/
+data_realbak/
+*_realbak/
+
+# --- Caches & generated data ---
+**/_processed/
+~$*.xlsx
+
+# --- PyInstaller build artifacts ---
+build/
+dist/
+*.spec.bak
+
+# --- Logs ---
+*.log
+dashboard_log.txt
+dashboard_error.txt
+
+# --- IDE settings ---
+.idea/
+.vscode/
+
+# --- Tooling ---
+.claude/
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Jupyter ---
+.ipynb_checkpoints/

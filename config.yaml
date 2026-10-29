@@ -1,0 +1,43 @@
+# ---------------------------------------------------------------------------
+# Project configuration. Edit these values; no code changes needed.
+# ---------------------------------------------------------------------------
+
+# Where your data tree lives, relative to the project root.
+# Expected layout:  data/<Category>/<Year>/<MonthName>.xlsx
+#   e.g.            data/Shirts/2022/January.xlsx
+data_dir: data
+
+# Where the cached, combined table is stored (created automatically).
+processed_dir: data/_processed
+
+# Inside each Excel file, one row per product. Column headers are matched
+# loosely (case / spacing / punctuation insensitive), so "Stock available",
+# "Stock Available" and "StockAvailable" all work. If your headers use very
+# different words, add them to the synonym lists in src/ingest.py.
+
+forecast:
+  horizon_months: 6        # how many months ahead to predict (Phase 3)
+
+restock:
+  lead_time_months: 1      # months between placing an order and stock arriving
+  service_level: 0.95      # target in-stock probability for safety stock
+
+products:
+  # The item-naming format changed in Sept 2024, so the same physical product
+  # can appear under two names. When true, products are identified by their
+  # 4–6 digit style code, linking them across the rename (and merging colour
+  # variants of the same style). Set false to analyse raw item names instead.
+  reconcile: true
+
+cleaning:
+  # Convert negative quantities (e.g. a mistyped "-12" stock count) to their
+  # absolute value. Applied to the analysis data only; your source files are
+  # never modified. Set to false to keep raw values.
+  abs_negatives: true
+
+validation:
+  # Allowed rounding slack when checking StockLeft = Available + Incoming - Outgoing.
+  identity_tolerance: 0
+
+display:
+  currency: ""             # optional prefix for any money figures, e.g. "$"

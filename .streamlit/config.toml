@@ -1,0 +1,8 @@
+# App-wide theme. Brand colors: deep navy (#0D1B3D) + lavender (#E6B6FA).
+[theme]
+base = "dark"
+primaryColor = "#E6B6FA"
+backgroundColor = "#0D1B3D"
+secondaryBackgroundColor = "#17264C"
+textColor = "#EAEAF5"
+font = "sans serif"
