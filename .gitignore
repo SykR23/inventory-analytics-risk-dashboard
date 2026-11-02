@@ -13,7 +13,11 @@ __pycache__/
 !.env.example
 
 # --- Real / private data (NEVER commit) ---
-data/
+# Ignore data by default, but allow synthetic demo data
+data/*
+!data/
+!data/Shirts/
+!data/Shirts/**
 data_realbak/
 *_realbak/
 
